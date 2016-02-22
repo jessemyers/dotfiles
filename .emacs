@@ -6,19 +6,16 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
-;; GOLANG
-(require 'go-mode-autoloads)
+;; PYTHON
+(add-to-list 'auto-mode-alist '("\\.py$" . python-mode))
+(add-hook 'python-mode-hook 'flycheck-mode)
 
 ;; MARKDOWN
-(require 'markdown-mode)
+; (require 'markdown-mode)
 (add-to-list 'auto-mode-alist '("\.markdown$" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\.mdown$" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\.md$" . markdown-mode))
 (setq markdown-indent-on-enter nil)
-
-;; PYTHON
-(add-to-list 'auto-mode-alist '("\\.py$" . python-mode))
-(add-hook 'python-mode-hook 'flycheck-mode)
 
 ;; GENERAL
 
